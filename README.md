@@ -19,12 +19,13 @@ particular `Brewfile`. The third command installs all dependencies in your `Brew
 Both the `Brewfile` and `Brewfile.lock.json` should be checked into version control.
 
 ```shell
-brew bundle dump
+brew bundle dump --describe
 brew bundle check --file=Brewfile
 brew bundle
 ```
 
 ## Managed files list
 * `.zshrc`
+* `.tmux.confg`
 * `Brewfile`
 * `Brewfile.lock.json`
