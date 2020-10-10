@@ -27,5 +27,6 @@ brew bundle
 ## Managed files list
 * `.zshrc`
 * `.tmux.confg`
+* `.gitconfig`
 * `Brewfile`
 * `Brewfile.lock.json`
