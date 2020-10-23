@@ -1,5 +1,4 @@
 # dotfiles (and new machine installer)
-Setup steps: https://harfangk.github.io/2016/09/18/manage-dotfiles-with-a-git-bare-repository.html
 
 ## Install Oh My Zsh
 https://github.com/ohmyzsh/ohmyzsh
@@ -17,12 +16,12 @@ git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$
 
 ## Seting up a new machine
 ```shell
-echo 'alias dotfiles="/usr/bin/git --git-dir=$HOME/.dotfiles.git/ --work-tree=$HOME"' >> $HOME/.zshrc
-source ~/.zshrc
+alias dotfile="GIT_DIR=$HOME/.dotfiles.git/ GIT_WORK_TREE=$HOME
 echo ".dotfiles.git" >> .gitignore
-git clone --bare https://www.github.com/username/repo.git $HOME/.dotfiles.git
-dotfiles checkout
-dotfiles config --local status.showUntrackedFiles no
+git clone --bare git@github.com:adithyabsk/dotfiles.git $HOME/.dotfiles.git
+dotfile git checkout
+dotfile git config --local status.showUntrackedFiles no
+# dotfile pre-commit install  # once brew dependencies are installed
 ```
 
 ## Managing brew dependencies
@@ -57,6 +56,8 @@ brew bundle install
 TODO: Pending this issue, look making sure that pinned installations are tracked by Brew.https://github.com/Homebrew/homebrew-bundle/issues/802
 
 ## Managed files list
+To list all tracked files, run: `git ls-tree -r master --name-only`
+
 Shell Configuration
 * `.zshrc`
 * `.tmux.conf`
@@ -68,3 +69,8 @@ Git
 Brew
 * `Brewfile`
 * `Brewfile.lock.json`
+
+
+## Acknowledgements
+* [Setup Inspiration](https://harfangk.github.io/2016/09/18/manage-dotfiles-with-a-git-bare-repository.html)
+* [Dotfile alias idea](https://github.com/pre-commit/pre-commit/issues/1657#issuecomment-715608016)

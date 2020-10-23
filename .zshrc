@@ -54,7 +54,10 @@ alias notify-done='terminal-notifier -title "Terminal" -message "Done with task!
 
 # Configure dotfile management using git
 # https://harfangk.github.io/2016/09/18/manage-dotfiles-with-a-git-bare-repository.html
-alias dotfiles="/usr/local/bin/git --git-dir=$HOME/.dotfiles.git/ --work-tree=$HOME"
+# Usage:
+#   dotfile git status
+#   dotfile pre-commit run -a
+alias dotfile="GIT_DIR=$HOME/.dotfiles.git/ GIT_WORK_TREE=$HOME"
 
 ## Language management (switch between language versions)
 
