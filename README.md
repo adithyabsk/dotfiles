@@ -33,8 +33,28 @@ particular `Brewfile`. The third command installs all dependencies in your `Brew
 ```shell
 brew bundle dump --describe
 brew bundle check --file=Brewfile
-brew bundle
+brew bundle install --force-bottle
 ```
+
+### Workflow for updating Brewfile
+```shell
+brew bundle dump --describe --file=temp
+smerge mergetool Brewfile temp
+rm temp
+brew bundle check --no-upgrade
+```
+
+### Workflow to update Brewfile.lock.json
+Make sure that you are ready to upgrade certain packages. (This may take some time)
+
+This should generate an updated `Brewfile.lock.json`.
+
+```shell
+brew bundle check -v
+brew bundle install
+```
+
+TODO: Pending this issue, look making sure that pinned installations are tracked by Brew.https://github.com/Homebrew/homebrew-bundle/issues/802
 
 ## Managed files list
 Shell Configuration
