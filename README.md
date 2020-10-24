@@ -1,5 +1,7 @@
 # dotfiles (and new machine installer)
 
+![lint](https://github.com/adithyabsk/dotfiles/workflows/lint/badge.svg?branch=master)
+
 ## Install Oh My Zsh
 
 <https://github.com/ohmyzsh/ohmyzsh>
