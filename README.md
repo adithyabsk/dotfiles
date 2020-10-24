@@ -1,4 +1,4 @@
-# dotfiles (and new machine installer)
+# dotfiles
 
 ![lint](https://github.com/adithyabsk/dotfiles/workflows/lint/badge.svg?branch=master)
 
@@ -22,7 +22,6 @@ git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$
 
 ```shell
 alias dotfile="GIT_DIR=$HOME/.dotfiles.git/ GIT_WORK_TREE=$HOME
-echo ".dotfiles.git" >> .gitignore
 git clone --bare git@github.com:adithyabsk/dotfiles.git $HOME/.dotfiles.git
 dotfile git checkout
 dotfile git config --local status.showUntrackedFiles no
@@ -68,7 +67,7 @@ TODO: Pending [this issue](https://github.com/Homebrew/homebrew-bundle/issues/80
 
 ## Managed files list
 
-To list all tracked files, run: `git ls-tree -r master --name-only`
+To list all tracked files, run: `dotfile git ls-tree -r master --name-only`
 
 Shell Configuration
 
@@ -84,6 +83,11 @@ Brew
 
 * `Brewfile`
 * `Brewfile.lock.json`
+
+Vim
+
+* `.vim/after/syntax/gitcommit.vim`
+* `.vimrc`
 
 ## Acknowledgements
 
