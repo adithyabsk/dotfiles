@@ -59,7 +59,8 @@ This should generate an updated `Brewfile.lock.json`.
 
 ```shell
 brew bundle check -v
-brew bundle install
+brew bundle install --no-upgrade
+# brew bundle install
 ```
 
 TODO: Pending [this issue](https://github.com/Homebrew/homebrew-bundle/issues/802)
