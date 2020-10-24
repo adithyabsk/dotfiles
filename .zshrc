@@ -63,8 +63,10 @@ alias dotfile="GIT_DIR=$HOME/.dotfiles.git/ GIT_WORK_TREE=$HOME"
 
 # pyenv (https://formulae.brew.sh/formula/pyenv)
 # https://github.com/pyenv/pyenv
-eval "$(pyenv virtualenv-init -)"
-eval "$(pyenv init -)"
+# For some reason these lines result in duplicated shim path in $PATH
+# likely because of brew
+# eval "$(pyenv virtualenv-init -)"
+# eval "$(pyenv init -)"
 
 # rbenv and ruby (https://formulae.brew.sh/formula/rbenv)
 # https://github.com/rbenv/rbenv
