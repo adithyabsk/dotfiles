@@ -92,3 +92,6 @@ export OBJC_DISABLE_INITIALIZE_FORK_SAFETY=YES
 
 # Set up rust
 export PATH="$HOME/.cargo/bin:$PATH"
+
+# Human readable $PATH
+alias printpath='tr ":" "\n" <<< "$PATH"'
