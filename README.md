@@ -44,9 +44,9 @@ brew bundle install --force-bottle
 ### Workflow for updating Brewfile
 
 ```shell
-brew bundle dump --describe --file=temp
-smerge mergetool Brewfile temp
-rm temp
+rm Brewfile
+brew bundle dump --describe
+dotfile git diff Brewfile
 brew bundle check --no-upgrade
 ```
 
