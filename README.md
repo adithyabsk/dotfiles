@@ -38,6 +38,7 @@ command installs all dependencies in your `Brewfile` and also creates a
 `Brewfile.lock.json`.
 
 ```shell
+dotfile git checkout private
 brew bundle dump --describe
 brew bundle check --file=Brewfile
 brew bundle install --force-bottle
@@ -46,6 +47,7 @@ brew bundle install --force-bottle
 ### Workflow for updating Brewfile
 
 ```shell
+dotfile git checkout private
 rm Brewfile
 brew bundle dump --describe
 dotfile git diff Brewfile
@@ -60,13 +62,25 @@ time)
 This should generate an updated `Brewfile.lock.json`.
 
 ```shell
+dotfile git checkout private
 brew bundle check -v
 brew bundle install --no-upgrade
 # brew bundle install
 ```
 
-TODO: Pending [this issue](https://github.com/Homebrew/homebrew-bundle/issues/802)
-, look making sure that pinned installations are tracked by Brew.
+## Managing all other files
+
+```shell
+dotfile git checkout master
+# Now make the changes
+```
+
+Then, to keep the private repo in sync
+
+```shell
+dotfile git checkout private
+dotfile git merge master
+```
 
 ## Managed files list
 
