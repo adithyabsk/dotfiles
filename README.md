@@ -23,12 +23,14 @@ git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$
 ```shell
 alias dotfile="GIT_DIR=$HOME/.dotfiles.git/ GIT_WORK_TREE=$HOME
 git clone --bare git@github.com:adithyabsk/dotfiles.git $HOME/.dotfiles.git
-dotfile git checkout
+dotfile git remote add private [REDACTED]
+dotfile git fetch private
+dotfile git checkout private
 dotfile git config --local status.showUntrackedFiles no
 # dotfile pre-commit install  # once brew dependencies are installed
 ```
 
-## Managing brew dependencies
+## Managing brew dependencies (kept private)
 
 The first command dumps your brew installed files to a `Brewfile`. The second
 command checks if you are in sync with a particular `Brewfile`. The third
