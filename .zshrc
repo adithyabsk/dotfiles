@@ -65,8 +65,8 @@ alias dotfile="GIT_DIR=$HOME/.dotfiles.git/ GIT_WORK_TREE=$HOME"
 # https://github.com/pyenv/pyenv
 # For some reason these lines result in duplicated shim path in $PATH
 # likely because of brew
-eval "$(pyenv virtualenv-init -)"
-eval "$(pyenv init -)"
+# eval "$(pyenv virtualenv-init -)"
+# eval "$(pyenv init -)"
 
 # rbenv and ruby (https://formulae.brew.sh/formula/rbenv)
 # https://github.com/rbenv/rbenv
@@ -98,3 +98,6 @@ alias printpath='tr ":" "\n" <<< "$PATH"'
 
 # excel cli
 alias excel="open -a /Applications/Microsoft\ Excel.app"
+
+# Add pipx installation dir to path
+PATH="$HOME/.local/bin:$PATH"
