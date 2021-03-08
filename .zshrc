@@ -101,3 +101,7 @@ alias excel="open -a /Applications/Microsoft\ Excel.app"
 
 # Add pipx installation dir to path
 PATH="$HOME/.local/bin:$PATH"
+
+# Configure zoxide: https://github.com/ajeetdsouza/zoxide
+#   * (Optional): https://github.com/junegunn/fzf#installation
+eval "$(zoxide init zsh)"
