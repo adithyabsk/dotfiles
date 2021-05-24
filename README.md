@@ -89,6 +89,7 @@ To list all tracked files, run: `dotfile git ls-tree -r master --name-only`
 Shell Configuration
 
 * `.zshrc`
+* `.zprofile`
 * `.tmux.conf`
 * `.p10k.zsh`
 

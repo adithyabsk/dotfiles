@@ -29,7 +29,6 @@ plugins=(
     git
     gatsby
     heroku
-    pyenv
     python
     golang
     django
@@ -63,10 +62,10 @@ alias dotfile="GIT_DIR=$HOME/.dotfiles.git/ GIT_WORK_TREE=$HOME"
 
 # pyenv (https://formulae.brew.sh/formula/pyenv)
 # https://github.com/pyenv/pyenv
-# For some reason these lines result in duplicated shim path in $PATH
-# likely because of brew
-# eval "$(pyenv virtualenv-init -)"
-# eval "$(pyenv init -)"
+# Note: there is additional config in ~/.zprofile
+# because of https://github.com/pyenv/pyenv/issues/1915
+eval "$(pyenv init -)"
+eval "$(pyenv virtualenv-init -)"
 
 # rbenv and ruby (https://formulae.brew.sh/formula/rbenv)
 # https://github.com/rbenv/rbenv
