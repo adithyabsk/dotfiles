@@ -20,7 +20,8 @@ git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$
 
 ## Setup ssh keys
 
-[Pulled from ](https://docs.github.com/en/enterprise-server@3.0/github/authenticating-to-github/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent)[ the GitHub Docs](https://docs.github.com/en/enterprise-server@3.0/github/authenticating-to-github/connecting-to-github-with-ssh/adding-a-new-ssh-key-to-your-github-account)
+[Pulled from](https://docs.github.com/en/enterprise-server@3.0/github/authenticating-to-github/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent)
+ [the GitHub Docs](https://docs.github.com/en/enterprise-server@3.0/github/authenticating-to-github/connecting-to-github-with-ssh/adding-a-new-ssh-key-to-your-github-account)
 
 Genereate ssh keys
 
@@ -54,15 +55,13 @@ Go to Settings > SSH and GPG keys > New SSH key and add the public key.
 
 [Install keybase (macOS)](https://keybase.io/docs/the_app/install_macos)
 
-<details><summary>Linux takes a few more steps</summary>
-<p>
+Linux takes a few more steps
+
 ```shell
 curl --remote-name https://prerelease.keybase.io/keybase_amd64.deb
 sudo apt install ./keybase_amd64.deb
 run_keybase
 ```
-</p>
-</details>
 
 Now we just to run the following commands
 
@@ -83,7 +82,7 @@ git to know to sign our commits using our pgp key.
 keybase pgp list
 ```
 
-## Repo Setup 
+## Repo Setup
 
 ## Setting up a new machine
 
