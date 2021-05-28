@@ -18,10 +18,77 @@ sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/too
 git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
 ```
 
+## Setup ssh keys
+
+[Pulled from ](https://docs.github.com/en/enterprise-server@3.0/github/authenticating-to-github/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent)[ the GitHub Docs](https://docs.github.com/en/enterprise-server@3.0/github/authenticating-to-github/connecting-to-github-with-ssh/adding-a-new-ssh-key-to-your-github-account)
+
+Genereate ssh keys
+
+```shell
+ssh-keygen -t ed25519 -C "your_email@example.com"
+```
+
+Confirm ssh agent is running
+
+```shell
+eval `ssh-agent -s`
+```
+
+Add the ssh keys to the agent
+
+```shell
+ssh-add ~/.ssh/id_ed25519
+```
+
+Add the keys to the github (use xclip on linux)
+
+```shell
+pbcopy < ~/.ssh/id_ed25519.pub
+# sudo apt-get update; sudo apt-get install xclip
+# xclip -selection clipboard < ~/.ssh/id_ed25519.pub
+```
+
+Go to Settings > SSH and GPG keys > New SSH key and add the public key.
+
+## Setup PGP
+
+[Install keybase (macOS)](https://keybase.io/docs/the_app/install_macos)
+
+<details><summary>Linux takes a few more steps</summary>
+<p>
+```shell
+curl --remote-name https://prerelease.keybase.io/keybase_amd64.deb
+sudo apt install ./keybase_amd64.deb
+run_keybase
+```
+</p>
+</details>
+
+Now we just to run the following commands
+
+```shell
+keybase login
+```
+
+Followed by the actual import
+
+```shell
+keybase pgp pull-private --all
+```
+
+We can confirm this all worked. Our gitconfig settings already let
+git to know to sign our commits using our pgp key.
+
+```shell
+keybase pgp list
+```
+
+## Repo Setup 
+
 ## Setting up a new machine
 
 ```shell
-alias dotfile="GIT_DIR=$HOME/.dotfiles.git/ GIT_WORK_TREE=$HOME
+alias dotfile="GIT_DIR=$HOME/.dotfiles.git/ GIT_WORK_TREE=$HOME"
 git clone --bare git@github.com:adithyabsk/dotfiles.git $HOME/.dotfiles.git
 dotfile git remote add private [REDACTED]
 dotfile git fetch private
