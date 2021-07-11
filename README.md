@@ -148,6 +148,11 @@ dotfile git checkout private
 dotfile git merge master
 ```
 
+## Setting up Windows Machines
+
+* [Install WSL](https://docs.microsoft.com/en-us/windows/wsl/install-win10)
+* [Windows Power Toys](https://github.com/microsoft/PowerToys)
+
 ## Managed files list
 
 To list all tracked files, run: `dotfile git ls-tree -r master --name-only`
