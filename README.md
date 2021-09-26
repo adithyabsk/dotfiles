@@ -84,7 +84,7 @@ dotfile git merge master
 
 ## Managed files list
 
-To list all tracked files, run: `dotfile git ls-tree -r master --name-only`
+To list all tracked files, run: `dotfile git ls-tree -r main --name-only`
 
 Shell Configuration
 
@@ -106,6 +106,10 @@ Vim
 
 * `.vim/after/syntax/gitcommit.vim`
 * `.vimrc`
+
+Karbiner
+
+* `.config/karabiner/karabiner.json`
 
 ## Acknowledgements
 
