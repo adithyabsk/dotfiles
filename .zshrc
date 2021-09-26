@@ -21,6 +21,9 @@ COMPLETION_WAITING_DOTS="true"
 
 # Plugins
 plugins=(
+    # follow installation instructions here:
+    # https://github.com/zsh-users/zsh-autosuggestions/blob/master/INSTALL.md#oh-my-zsh
+    zsh-autosuggestions
     # syntax-highlight file contents (requires pygments)
     colorize
     colored-man-pages
