@@ -34,7 +34,6 @@ plugins=(
     heroku
     python
     golang
-    django
     yarn
     # Adds "brews" --> list / "bubo" --> update/show outdated (also bcubo)
     brew

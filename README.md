@@ -18,10 +18,16 @@ sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/too
 git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
 ```
 
+### Configure iTerm2
+
+* [Install this color profile](https://raw.githubusercontent.com/mbadolato/iTerm2-Color-Schemes/master/schemes/Solarized%20Dark%20Higher%20Contrast.itermcolors)
+* Add the ability to use option to move forward and backward in text
+    * Preferences --> Profiles --> Keys --> Presets... --> Natural Text Editing
+
 ## Setting up a new machine
 
 ```shell
-alias dotfile="GIT_DIR=$HOME/.dotfiles.git/ GIT_WORK_TREE=$HOME
+alias dotfile="GIT_DIR=$HOME/.dotfiles.git/ GIT_WORK_TREE=$HOME"
 git clone --bare git@github.com:adithyabsk/dotfiles.git $HOME/.dotfiles.git
 dotfile git remote add private [REDACTED]
 dotfile git fetch private

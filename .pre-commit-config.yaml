@@ -9,3 +9,5 @@ repos:
     rev: v0.11.0
     hooks:
     -   id: markdownlint
+        # https://github.com/markdownlint/markdownlint/issues/313
+        args: ["-r ~MD007"]
