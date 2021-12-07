@@ -1,0 +1,23 @@
+{
+	"bootstrapped": true,
+	"in_process_packages":
+	[
+	],
+	"installed_packages":
+	[
+		"CFG Configuration Syntax Highlighting",
+		"CMake",
+		"Dotfiles Syntax Highlighting",
+		"EDN",
+		"Ethereum",
+		"INI",
+		"LC3 Assembly",
+		"Package Control",
+		"Solarized Color Scheme",
+		"Swig",
+		"Tabnine",
+		"TOML",
+		"TypeScript",
+		"Verilog",
+	],
+}

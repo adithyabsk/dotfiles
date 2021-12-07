@@ -18,12 +18,6 @@ sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/too
 git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
 ```
 
-### Configure iTerm2
-
-* [Install this color profile](https://raw.githubusercontent.com/mbadolato/iTerm2-Color-Schemes/master/schemes/Solarized%20Dark%20Higher%20Contrast.itermcolors)
-* Add the ability to use option to move forward and backward in text
-    * Preferences --> Profiles --> Keys --> Presets... --> Natural Text Editing
-
 ## Setting up a new machine
 
 ```shell
@@ -88,34 +82,29 @@ dotfile git checkout private
 dotfile git merge master
 ```
 
-## Managed files list
-
 To list all tracked files, run: `dotfile git ls-tree -r main --name-only`
 
-Shell Configuration
+## Configure iTerm2
 
-* `.zshrc`
-* `.zprofile`
-* `.tmux.conf`
-* `.p10k.zsh`
+* Link auto dark mode
+    * `ln -s scripts/auto_dark_mode.py ~/Library/Application\ Support/iTerm2/Scripts/auto_dark_mode.py`
+    * Scripts > Enable Python API
+* Point iTerm2 to the config file checked into git
+    * Preferences > General > Preferences > Load preferences from a custom
+    folder or URL : `~/settings/`
+* The following are the manual changes that were made but are saved in the
+settings config file that we point to above.
+    * [Install this color profile](https://raw.githubusercontent.com/mbadolato/iTerm2-Color-Schemes/master/schemes/Solarized%20Dark%20Higher%20Contrast.itermcolors)
+    * Add the ability to use option to move forward and backward in text
+        * Preferences > Profiles > Keys > Key Mappings> Presets... > Natural Text Editing
 
-Git
+## Run config script
 
-* `.gitconfig`
+This script will configure a new machine with settings.
 
-Brew
-
-* `Brewfile`
-* `Brewfile.lock.json`
-
-Vim
-
-* `.vim/after/syntax/gitcommit.vim`
-* `.vimrc`
-
-Karbiner
-
-* `.config/karabiner/karabiner.json`
+```bash
+python scripts/config.py
+```
 
 ## Acknowledgements
 
