@@ -19,5 +19,6 @@
 		"TOML",
 		"TypeScript",
 		"Verilog",
+		"WordCount",
 	],
 }

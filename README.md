@@ -18,6 +18,17 @@ sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/too
 git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
 ```
 
+### Oh My Zsh Plugins
+
+You generally install oh my zsh plugins to the plugins folder. The following
+plugins need to be manually installed.
+
+* zsh-autosuggestions
+  * https://github.com/zsh-users/zsh-autosuggestions
+* you-should-use
+  * https://github.com/MichaelAquilina/zsh-you-should-use
+
+
 ## Setting up a new machine
 
 ```shell

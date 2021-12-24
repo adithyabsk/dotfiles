@@ -21,20 +21,18 @@ COMPLETION_WAITING_DOTS="true"
 
 # Plugins
 plugins=(
-    # follow installation instructions here:
     # https://github.com/zsh-users/zsh-autosuggestions/blob/master/INSTALL.md#oh-my-zsh
     zsh-autosuggestions
+    # https://github.com/MichaelAquilina/zsh-you-should-use#installation
+    you-should-use
     # syntax-highlight file contents (requires pygments)
     colorize
     colored-man-pages
     # Adds tab completion for the following tools
     pip
     git
-    gatsby
     heroku
     python
-    golang
-    yarn
     # Adds "brews" --> list / "bubo" --> update/show outdated (also bcubo)
     brew
     rust
@@ -106,3 +104,8 @@ PATH="$HOME/.local/bin:$PATH"
 # Configure zoxide: https://github.com/ajeetdsouza/zoxide
 #   * (Optional): https://github.com/junegunn/fzf#installation
 eval "$(zoxide init zsh)"
+
+
+# Training Wheels Protocol: Make sure that I use the keyboard shortcuts for
+#                           cli commands. Enabled in you-should-use
+export YSU_HARDCORE=1
