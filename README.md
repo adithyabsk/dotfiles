@@ -23,11 +23,9 @@ git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$
 You generally install oh my zsh plugins to the plugins folder. The following
 plugins need to be manually installed.
 
-* zsh-autosuggestions
-  * https://github.com/zsh-users/zsh-autosuggestions
-* you-should-use
-  * https://github.com/MichaelAquilina/zsh-you-should-use
-
+* [zsh-autosuggestions](https://github.com/zsh-users/zsh-autosuggestions)
+* [you-should-use](https://github.com/MichaelAquilina/zsh-you-should-use)
+* [zsh-syntax-highlighting](https://github.com/zsh-users/zsh-syntax-highlighting)
 
 ## Setting up a new machine
 
@@ -98,16 +96,16 @@ To list all tracked files, run: `dotfile git ls-tree -r main --name-only`
 ## Configure iTerm2
 
 * Link auto dark mode
-    * `ln -s scripts/auto_dark_mode.py ~/Library/Application\ Support/iTerm2/Scripts/auto_dark_mode.py`
-    * Scripts > Enable Python API
+  * `ln -s scripts/auto_dark_mode.py ~/Library/Application\ Support/iTerm2/Scripts/auto_dark_mode.py`
+  * Scripts > Enable Python API
 * Point iTerm2 to the config file checked into git
-    * Preferences > General > Preferences > Load preferences from a custom
+  * Preferences > General > Preferences > Load preferences from a custom
     folder or URL : `~/settings/`
 * The following are the manual changes that were made but are saved in the
 settings config file that we point to above.
-    * [Install this color profile](https://raw.githubusercontent.com/mbadolato/iTerm2-Color-Schemes/master/schemes/Solarized%20Dark%20Higher%20Contrast.itermcolors)
-    * Add the ability to use option to move forward and backward in text
-        * Preferences > Profiles > Keys > Key Mappings> Presets... > Natural Text Editing
+  * [Install this color profile](https://raw.githubusercontent.com/mbadolato/iTerm2-Color-Schemes/master/schemes/Solarized%20Dark%20Higher%20Contrast.itermcolors)
+  * Add the ability to use option to move forward and backward in text
+    * Preferences > Profiles > Keys > Key Mappings> Presets... > Natural Text Editing
 
 ## Run config script
 

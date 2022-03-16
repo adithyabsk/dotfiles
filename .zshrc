@@ -36,6 +36,9 @@ plugins=(
     # Adds "brews" --> list / "bubo" --> update/show outdated (also bcubo)
     brew
     rust
+    # https://github.com/zsh-users/zsh-syntax-highlighting
+    # this needs to be the last plugin
+    zsh-syntax-highlighting
 )
 
 # Setup Oh-My-Zshell
