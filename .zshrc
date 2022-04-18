@@ -108,7 +108,9 @@ PATH="$HOME/.local/bin:$PATH"
 #   * (Optional): https://github.com/junegunn/fzf#installation
 eval "$(zoxide init zsh)"
 
-
 # Training Wheels Protocol: Make sure that I use the keyboard shortcuts for
 #                           cli commands. Enabled in you-should-use
 export YSU_HARDCORE=1
+
+# Fix notes spotlight index
+alias fixnotes="mdimport -i ~/Personal/notes/"

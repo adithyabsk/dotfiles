@@ -13,3 +13,7 @@
 	gpgsign = true
 [init]
 	defaultBranch = main
+# https://blog.nilbus.com/take-the-pain-out-of-git-conflict-resolution-use-diff3/
+# https://stackoverflow.com/a/27417871/3262054
+[merge]
+	conflictstyle = diff3
