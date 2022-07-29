@@ -77,6 +77,15 @@ brew bundle install --no-upgrade
 # brew bundle install
 ```
 
+### Auditing Brew installations
+
+Run through your `Brewfile` and remove files as needed. Check that the file is
+not a dependency of another package:
+
+```shell
+brew uses --installed [PACKAGE]
+```
+
 ## Managing all other files
 
 ```shell
