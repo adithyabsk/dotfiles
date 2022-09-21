@@ -13,7 +13,7 @@ fi
 
 # Path to oh-my-zsh installation.
 # https://github.com/ohmyzsh/ohmyzsh
-export ZSH="/Users/adithyabalaji/.oh-my-zsh"
+export ZSH="/home/adithya/.oh-my-zsh"
 
 # Set oh my zshell theme to powerlevel10k
 ZSH_THEME="powerlevel10k/powerlevel10k"
@@ -67,7 +67,21 @@ alias notify-done='terminal-notifier -title "Terminal" -message "Done with task!
 #   dotfile pre-commit run -a
 alias dotfile="GIT_DIR=$HOME/.dotfiles.git/ GIT_WORK_TREE=$HOME"
 
+# CUDA config
+export PATH=/usr/local/cuda-10.2/bin:$PATH
+export LD_LIBRARY_PATH=/usr/local/cuda-10.2/lib64:$LD_LIBRARY_PATH
+
+# setup brew
+eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+
 ## Other settings
+
+# requests issue for now with python
+# https://stackoverflow.com/a/52230415/3262054
+# export OBJC_DISABLE_INITIALIZE_FORK_SAFETY=YES
+
+# Set up rust
+# export PATH="$HOME/.cargo/bin:$PATH"
 
 # Human readable $PATH
 alias printpath='tr ":" "\n" <<< "$PATH"'
@@ -80,7 +94,7 @@ PATH="$HOME/.local/bin:$PATH"
 
 # Configure zoxide: https://github.com/ajeetdsouza/zoxide
 #   * (Optional): https://github.com/junegunn/fzf#installation
-eval "$(zoxide init zsh)"
+# eval "$(zoxide init zsh)"
 
 # Fix notes spotlight index
 alias fixnotes="mdimport -i ~/Personal/notes/"
