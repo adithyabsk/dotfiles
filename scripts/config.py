@@ -37,20 +37,6 @@ if all(s.returncode == 0 for s in [s1, s2]):
 else:
     print("Failed to setup iTerm2 settings folder")
 
-# Setup linking to allowed_signers if it exists
-ALLOWED_SIGNERS = Path("~/.config/ssh/allowed_signers").expanduser()
-try:
-    src = SCRIPT_PATH / SWITCHER_SCRIPT_NAME
-    dst = ITERM_SCRIPTS_DIR / SWITCHER_SCRIPT_NAME
-    os.symlink(
-        src=src,
-        dst=dst,
-    )
-    print("Linked f{src} to f{dst}")
-except FileExistsError:
-    print("Skipped linking f{ALLOWED_SIGNERS} since it is already linked")
-
-
 # Setup Sublime settings
 SUBLIME_SETTINGS_DIR = Path(
     "~/Library/Application Support/Sublime Text/Packages/User"
