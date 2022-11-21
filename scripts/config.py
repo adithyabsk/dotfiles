@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 
 import os
+import shutil
 import subprocess
 from pathlib import Path
 
@@ -42,13 +43,20 @@ SUBLIME_SETTINGS_DIR = Path(
     "~/Library/Application Support/Sublime Text/Packages/User"
 ).expanduser()
 SUBLIME_SETTINGS = Path(
-    "~/settings/sublime"
+    "~/.config/sublime"
 ).expanduser()
 try:
+    if SUBLIME_SETTINGS_DIR.is_symlink():
+        raise FileExistsError("already a symlink")
+    elif SUBLIME_SETTINGS_DIR.exists() and SUBLIME_SETTINGS_DIR.is_dir():
+        # only shutil will delete a folder with contents
+        # pathlib will raise an error if the folder has contents in it
+        shutil.rmtree(SUBLIME_SETTINGS_DIR)
     os.symlink(
         src=SUBLIME_SETTINGS,
         dst=SUBLIME_SETTINGS_DIR,
         target_is_directory=True,
     )
+    print(f"Linked {SUBLIME_SETTINGS} to {SUBLIME_SETTINGS_DIR}")
 except FileExistsError:
     print("Skipped linking Sublime settings since it is already linked")
