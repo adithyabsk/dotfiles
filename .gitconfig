@@ -1,7 +1,7 @@
 [user]
 	name = Adithya Balaji
 	email = adithyabsk@gmail.com
-	signingkey = DE795E7C6B2177DD
+	signingkey = ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAILBXqRDIzCS7sdDTWv4mjzh30LuR84hV/r1CjVSr5iqA adithyabsk@gmail.com
 [filter "lfs"]
 	clean = git-lfs clean -- %f
 	smudge = git-lfs smudge -- %f
@@ -11,6 +11,10 @@
 	editor = vim
 [commit]
 	gpgsign = true
+[gpg]
+	format = ssh
+[gpg "ssh"]
+	allowedSignersFile = ~/.ssh/allowed_signers
 [init]
 	defaultBranch = main
 # https://blog.nilbus.com/take-the-pain-out-of-git-conflict-resolution-use-diff3/
