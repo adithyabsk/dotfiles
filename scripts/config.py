@@ -28,7 +28,7 @@ ITERM_CONFIG = Path(
     "~/.config/iterm2"
 ).expanduser()
 s1 = subprocess.run([
-    "defaults", "write", "com.googlecode.iterm2", "PrefsCustomFolder", "-string", f'"{ITERM_CONFIG}"'
+    "defaults", "write", "com.googlecode.iterm2", "PrefsCustomFolder", "-string", f'{ITERM_CONFIG}'
 ])
 s2 = subprocess.run([
     "defaults", "write", "com.googlecode.iterm2", "LoadPrefsFromCustomFolder", "-bool", "true"

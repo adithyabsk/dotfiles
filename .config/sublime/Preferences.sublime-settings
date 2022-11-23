@@ -4,8 +4,6 @@
 	"rulers": [80, 100],
 	"font_size": 14,
 	"color_scheme": "auto",
-	"light_color_scheme": "Solarized (light).sublime-color-scheme",
-	"dark_color_scheme": "Mariana.sublime-color-scheme",
 	"ignored_packages":
 	[
 		"Vintage",
