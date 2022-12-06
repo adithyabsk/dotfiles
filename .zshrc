@@ -39,6 +39,8 @@ plugins=(
     # https://github.com/zsh-users/zsh-syntax-highlighting
     # this needs to be the last plugin
     zsh-syntax-highlighting
+    # https://github.com/ohmyzsh/ohmyzsh/blob/master/plugins/asdf/asdf.plugin.zsh
+    asdf
 )
 
 # Setup Oh-My-Zshell
@@ -61,39 +63,7 @@ alias notify-done='terminal-notifier -title "Terminal" -message "Done with task!
 #   dotfile pre-commit run -a
 alias dotfile="GIT_DIR=$HOME/.dotfiles.git/ GIT_WORK_TREE=$HOME"
 
-## Language management (switch between language versions)
-
-# pyenv (https://formulae.brew.sh/formula/pyenv)
-# https://github.com/pyenv/pyenv
-# Note: there is additional config in ~/.zprofile
-# because of https://github.com/pyenv/pyenv/issues/1915
-eval "$(pyenv init -)"
-eval "$(pyenv virtualenv-init -)"
-
-# rbenv and ruby (https://formulae.brew.sh/formula/rbenv)
-# https://github.com/rbenv/rbenv
-eval "$(rbenv init -)"
-# Sets ruby to error on warnings
-# Only turn this on when you are actively using ruby
-# this can cause issues with system scripts that use ruby
-# export RUBYOPT="-W:no-deprecated -W:no-experimental"
-
-# Setup nodenv (https://formulae.brew.sh/formula/nodenv)
-# https://github.com/nodenv/nodenv
-eval "$(nodenv init -)"
-
-# jenv (https://formulae.brew.sh/formula/jenv)
-# https://github.com/jenv/jenv
-eval "$(jenv init -)"
-
 ## Other settings
-
-# requests issue for now with python
-# https://stackoverflow.com/a/52230415/3262054
-export OBJC_DISABLE_INITIALIZE_FORK_SAFETY=YES
-
-# Set up rust
-export PATH="$HOME/.cargo/bin:$PATH"
 
 # Human readable $PATH
 alias printpath='tr ":" "\n" <<< "$PATH"'
@@ -110,3 +80,12 @@ eval "$(zoxide init zsh)"
 
 # Fix notes spotlight index
 alias fixnotes="mdimport -i ~/Personal/notes/"
+
+# Setup asdf-java auto setting $JAVA_HOME
+source ~/.asdf/plugins/java/set-java-home.zsh
+
+# Setup asdf-ruby
+export RUBY_CONFIGURE_OPTS="--with-openssl-dir=$(brew --prefix openssl@3)"
+
+# Setup direnv
+source "${XDG_CONFIG_HOME:-$HOME/.config}/asdf-direnv/zshrc"

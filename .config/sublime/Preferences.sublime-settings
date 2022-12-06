@@ -6,7 +6,10 @@
 	"color_scheme": "auto",
 	"ignored_packages":
 	[
+		"TypeScript",
 		"Vintage",
 	],
 	"scroll_past_end": true,
+	"dark_color_scheme": "Mariana.sublime-color-scheme",
+	"light_color_scheme": "Breakers.sublime-color-scheme",
 }
