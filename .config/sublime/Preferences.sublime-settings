@@ -10,6 +10,7 @@
 		"Vintage",
 	],
 	"scroll_past_end": true,
-	"dark_color_scheme": "Mariana.sublime-color-scheme",
-	"light_color_scheme": "Breakers.sublime-color-scheme",
+	"dark_theme": "Default Dark.sublime-theme",
+	"light_theme": "Default.sublime-theme",
+	"theme": "auto",
 }

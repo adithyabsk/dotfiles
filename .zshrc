@@ -5,9 +5,11 @@
 # Powerlevel10k https://github.com/romkatv/powerlevel10k
 # Initialization code that may require console input (password prompts, [y/n]
 # confirmations, etc.) must go above this block; everything else may go below.
+(( ${+commands[direnv]} )) && emulate zsh -c "$(direnv export zsh)"
 if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
+(( ${+commands[direnv]} )) && emulate zsh -c "$(direnv hook zsh)"
 
 # Path to oh-my-zsh installation.
 # https://github.com/ohmyzsh/ohmyzsh
@@ -33,6 +35,8 @@ plugins=(
     git
     heroku
     python
+    # https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/ssh-agent
+    ssh-agent
     # Adds "brews" --> list / "bubo" --> update/show outdated (also bcubo)
     brew
     rust
@@ -87,5 +91,16 @@ source ~/.asdf/plugins/java/set-java-home.zsh
 # Setup asdf-ruby
 export RUBY_CONFIGURE_OPTS="--with-openssl-dir=$(brew --prefix openssl@3)"
 
-# Setup direnv
-source "${XDG_CONFIG_HOME:-$HOME/.config}/asdf-direnv/zshrc"
+# Makes colors work
+# Note: requires brew coreutils
+alias update-colors="source ~/.ls_colors.vivid"
+if [ -f ~/.ls_colors.vivid ]; then
+    update-colors
+else
+    print "~/.ls_colors.vivid not found."
+fi
+
+# coreutils alias
+# use `type [cmd]` to verify this
+alias ls="gls --color"
+alias cat="ccat"

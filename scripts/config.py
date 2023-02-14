@@ -9,10 +9,12 @@ SCRIPT_PATH = Path(__file__).parent.resolve()
 
 
 # Setup iTerm2 dark mode switching
+# https://iterm2.com/python-api/tutorial/running.html#auto-run-scripts
 SWITCHER_SCRIPT_NAME = "auto_dark_mode.py"
 ITERM_SCRIPTS_DIR = Path(
-    "~/Library/Application Support/iTerm2/Scripts"
+    "~/Library/Application Support/iTerm2/Scripts/AutoLaunch"
 ).expanduser()
+ITERM_SCRIPTS_DIR.mkdir(parents=True, exist_ok=True)
 try:
     os.symlink(
         src=SCRIPT_PATH / SWITCHER_SCRIPT_NAME,
