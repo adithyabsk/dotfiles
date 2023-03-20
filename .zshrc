@@ -5,15 +5,14 @@
 # Powerlevel10k https://github.com/romkatv/powerlevel10k
 # Initialization code that may require console input (password prompts, [y/n]
 # confirmations, etc.) must go above this block; everything else may go below.
-(( ${+commands[direnv]} )) && emulate zsh -c "$(direnv export zsh)"
+
 if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
-(( ${+commands[direnv]} )) && emulate zsh -c "$(direnv hook zsh)"
 
 # Path to oh-my-zsh installation.
 # https://github.com/ohmyzsh/ohmyzsh
-export ZSH="/Users/adithyabalaji/.oh-my-zsh"
+export ZSH="${HOME}/.oh-my-zsh"
 
 # Set oh my zshell theme to powerlevel10k
 ZSH_THEME="powerlevel10k/powerlevel10k"
@@ -40,15 +39,17 @@ plugins=(
     # Adds "brews" --> list / "bubo" --> update/show outdated (also bcubo)
     brew
     rust
+    # https://github.com/ohmyzsh/ohmyzsh/blob/master/plugins/asdf/asdf.plugin.zsh
+    asdf
     # https://github.com/zsh-users/zsh-syntax-highlighting
     # this needs to be the last plugin
     zsh-syntax-highlighting
-    # https://github.com/ohmyzsh/ohmyzsh/blob/master/plugins/asdf/asdf.plugin.zsh
-    asdf
 )
 
 # Setup Oh-My-Zshell
 source $ZSH/oh-my-zsh.sh
+# fix comment not showing up on a dark background
+ZSH_HIGHLIGHT_STYLES[comment]=fg=8,bold
 
 # Powerlevel10k config
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
@@ -104,3 +105,9 @@ fi
 # use `type [cmd]` to verify this
 alias ls="gls --color"
 alias cat="ccat"
+
+# Setup asdf direnv
+# silence direnv (turn this off if there are environment variable errors)
+# note: this also hides errors output from commands like `env_vars_required`
+source "${XDG_CONFIG_HOME:-$HOME/.config}/asdf-direnv/zshrc"
+export DIRENV_LOG_FORMAT=
