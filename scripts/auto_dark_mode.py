@@ -22,11 +22,6 @@ from pathlib import Path
 # https://github.com/folke/tokyonight.nvim/tree/main/extras/iterm
 THEME_LIGHT = "Light Background"
 THEME_DARK = "tokyonight_night"
-LS_LIGHT = "one-light"
-LS_DARK = "ayu"
-LS_COLOR_FILE = Path("~/.ls_colors.vivid").expanduser()
-LS_COLOR_FILE.touch()
-THEME_TEMPLATE = 'export LS_COLORS="$(vivid generate {})"\n'
 
 
 class AutoSwtichTheme:
@@ -44,16 +39,6 @@ class AutoSwtichTheme:
             return parts[0]
         return ""
 
-    def update_ls_colors(self, theme):
-        # intentionally decided to not update all the session colors since
-        # we don't know if a process is running or not and don't want to write
-        # text to the session to update the env variables. Instead you can just
-        # use the `update-colors` alias
-        ls_theme = LS_LIGHT if theme == "light" else LS_DARK
-        ls_file_text = THEME_TEMPLATE.format(ls_theme)
-        LS_COLOR_FILE.write_text(ls_file_text)
-
-
     async def set_color_preset(self, theme):
         # update iTerm theme
         preset = await iterm2.ColorPreset.async_get(
@@ -64,9 +49,6 @@ class AutoSwtichTheme:
             await (await partial.async_get_full_profile()).async_set_color_preset(
                 preset
             )
-
-        # update ls colors
-        self.update_ls_colors(theme)
 
 
 async def quit(connection):

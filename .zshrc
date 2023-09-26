@@ -86,25 +86,15 @@ eval "$(zoxide init zsh)"
 # Fix notes spotlight index
 alias fixnotes="mdimport -i ~/Personal/notes/"
 
-# Setup asdf-java auto setting $JAVA_HOME
-source ~/.asdf/plugins/java/set-java-home.zsh
-
 # Setup asdf-ruby
 export RUBY_CONFIGURE_OPTS="--with-openssl-dir=$(brew --prefix openssl@3)"
 
-# Makes colors work
-# Note: requires brew coreutils
-alias update-colors="source ~/.ls_colors.vivid"
-if [ -f ~/.ls_colors.vivid ]; then
-    update-colors
-else
-    print "~/.ls_colors.vivid not found."
-fi
-
-# coreutils alias
-# use `type [cmd]` to verify this
-alias ls="gls --color"
-alias cat="ccat"
+# modern tools aliases
+alias cat='bat --paging=never'
+alias l='eza'
+alias la='eza -a'
+alias ll='eza -lah'
+alias ls='eza --color=auto'
 
 # Setup asdf direnv
 # silence direnv (turn this off if there are environment variable errors)
