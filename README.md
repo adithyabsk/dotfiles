@@ -26,6 +26,7 @@ plugins need to be manually installed.
 * [zsh-autosuggestions](https://github.com/zsh-users/zsh-autosuggestions)
 * [you-should-use](https://github.com/MichaelAquilina/zsh-you-should-use)
 * [zsh-syntax-highlighting](https://github.com/zsh-users/zsh-syntax-highlighting)
+* [fzf-zsh-plugin](https://github.com/unixorn/fzf-zsh-plugin#oh-my-zsh)
 
 ## Setting up a new machine
 

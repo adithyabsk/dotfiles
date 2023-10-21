@@ -41,6 +41,8 @@ plugins=(
     rust
     # https://github.com/ohmyzsh/ohmyzsh/blob/master/plugins/asdf/asdf.plugin.zsh
     asdf
+    # https://github.com/unixorn/fzf-zsh-plugin
+    fzf-zsh-plugin
     # https://github.com/zsh-users/zsh-syntax-highlighting
     # this needs to be the last plugin
     zsh-syntax-highlighting
