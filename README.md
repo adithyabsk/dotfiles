@@ -90,7 +90,7 @@ brew uses --installed [PACKAGE]
 ## Managing all other files
 
 ```shell
-dotfile git checkout master
+dotfile git checkout main
 # Now make the changes
 ```
 
@@ -98,7 +98,7 @@ Then, to keep the private repo in sync
 
 ```shell
 dotfile git checkout private
-dotfile git merge master
+dotfile git merge main
 ```
 
 To list all tracked files, run: `dotfile git ls-tree -r main --name-only`
