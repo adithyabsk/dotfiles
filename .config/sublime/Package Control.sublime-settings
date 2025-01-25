@@ -2,7 +2,6 @@
 	"bootstrapped": true,
 	"in_process_packages":
 	[
-		"TypeScript",
 	],
 	"installed_packages":
 	[
@@ -16,6 +15,7 @@
 		"LC3 Assembly",
 		"Package Control",
 		"Pretty YAML",
+		"rainbow_csv",
 		"Solarized Color Scheme",
 		"Swig",
 		"Tabnine",

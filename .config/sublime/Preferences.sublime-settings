@@ -6,11 +6,11 @@
 	"color_scheme": "auto",
 	"ignored_packages":
 	[
-		"TypeScript",
 		"Vintage",
 	],
 	"scroll_past_end": true,
 	"dark_theme": "Default Dark.sublime-theme",
 	"light_theme": "Default.sublime-theme",
 	"theme": "auto",
+	"index_files": true,
 }
