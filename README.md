@@ -2,6 +2,14 @@
 
 ![lint](https://github.com/adithyabsk/dotfiles/workflows/lint/badge.svg?branch=master)
 
+## On macOS
+
+* Configure the default preferences on the system
+
+```shell
+./scripts/setup-macos.sh
+```
+
 ## Install Oh My Zsh
 
 <https://github.com/ohmyzsh/ohmyzsh>
