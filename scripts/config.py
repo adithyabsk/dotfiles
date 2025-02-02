@@ -25,7 +25,7 @@ try:
 except FileExistsError:
 	print("Skipped linking iTerm2 auto_dark_mode script since it is already linked")
 
-# Setup linking to the dotfiles
+# Setup iterm2 linking
 ITERM_CONFIG = Path(
     "~/.config/iterm2"
 ).expanduser()
@@ -39,6 +39,33 @@ if all(s.returncode == 0 for s in [s1, s2]):
     print("Setup iTerm2 to use custom settings folder")
 else:
     print("Failed to setup iTerm2 settings folder")
+
+# Setup ghostty linking
+GHOSTTY_SETTINGS_DIR = Path(
+    "~/Library/Application Support/com.mitchellh.ghostty/config"
+).expanduser()
+GHOSTTY_SETTINGS = Path(
+    "~/.config/ghostty/config"
+).expanduser()
+try:
+    if GHOSTTY_SETTINGS_DIR.is_symlink():
+        raise FileExistsError("already a symlink")
+    elif GHOSTTY_SETTINGS_DIR.exists():
+        # Remove existing file or directory
+        if GHOSTTY_SETTINGS_DIR.is_dir():
+            shutil.rmtree(GHOSTTY_SETTINGS_DIR)
+        else:
+            GHOSTTY_SETTINGS_DIR.unlink()
+    os.symlink(
+        src=GHOSTTY_SETTINGS,
+        dst=GHOSTTY_SETTINGS_DIR,
+        target_is_directory=False,
+    )
+    print(f"Linked {GHOSTTY_SETTINGS} to {GHOSTTY_SETTINGS_DIR}")
+except FileExistsError:
+    print("Skipped linking Ghostty settings since it is already linked")
+
+
 
 # Setup Sublime settings
 SUBLIME_SETTINGS_DIR = Path(
