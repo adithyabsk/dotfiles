@@ -39,8 +39,8 @@ plugins=(
     # Adds "brews" --> list / "bubo" --> update/show outdated (also bcubo)
     brew
     rust
-    # https://github.com/ohmyzsh/ohmyzsh/blob/master/plugins/asdf/asdf.plugin.zsh
-    asdf
+    # https://github.com/ohmyzsh/ohmyzsh/blob/master/plugins/mise/mise.plugin.zsh
+    mise
     # https://github.com/unixorn/fzf-zsh-plugin
     fzf-zsh-plugin
     # https://github.com/zsh-users/zsh-syntax-highlighting
@@ -78,7 +78,7 @@ alias printpath='tr ":" "\n" <<< "$PATH"'
 # excel cli
 alias excel="open -a /Applications/Microsoft\ Excel.app"
 
-# Add pipx installation dir to path
+# Add tool installation dir to path
 PATH="$HOME/.local/bin:$PATH"
 
 # Configure zoxide: https://github.com/ajeetdsouza/zoxide
@@ -97,9 +97,3 @@ alias l='eza'
 alias la='eza -a'
 alias ll='eza -lah'
 alias ls='eza --color=auto'
-
-# Setup asdf direnv
-# silence direnv (turn this off if there are environment variable errors)
-# note: this also hides errors output from commands like `env_vars_required`
-source "${XDG_CONFIG_HOME:-$HOME/.config}/asdf-direnv/zshrc"
-export DIRENV_LOG_FORMAT=

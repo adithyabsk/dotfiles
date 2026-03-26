@@ -43,4 +43,4 @@
 # resize-overlay-duration = 4s 200ms
 
 # Set up dark and light mode themes
-theme = dark:catppuccin-frappe,light:catppuccin-latte
+theme = dark:Catppuccin Frappe,light:Catppuccin Latte
